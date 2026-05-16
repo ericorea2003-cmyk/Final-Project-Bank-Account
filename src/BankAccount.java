@@ -1,36 +1,66 @@
-
 /**
  * Bank Account Application
  * Description: Represents an individual bank account containing an account number,
- * owner name, and current balance.
+ * owner name, and current balance. Provides functional methods for banking operations.
+ * 
  * @Author: Eric Orea
- * @Date:5/4/26
+ * @Date: 5//2026
  */
-
 public class BankAccount {
-    
-    // Static variable to generate unique account numbers
-    private static int nextAccountNumber = 1000;
-    
+    private static int nextId = 1000; // Static variable shared by all instances
     private int accountNumber;
-    private String ownerName;
+    private String holderName;
     private double balance;
-    
+
+    public BankAccount(String name) {
+        this.holderName = name;
+        this.balance = 0.0;
+        this.accountNumber = nextId++; // Assigns current value then increments for the next account
+    }
+
+    public int getAccountNumber() { return accountNumber; }
+
     /**
-     * Constructor to initialize a new bank account.
+     * Deposits money into the account.
+     * @param amount The amount to add.
+     * @throws IllegalArgumentException if amount is non-positive.
      */
-    public BankAccount(String ownerName, double initialBalance) {
-        if (initialBalance < 0) {
-            throw new IllegalArgumentException("Initial balance cannot be negative.");
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be positive.");
         }
-        this.accountNumber = nextAccountNumber++;
-        this.ownerName = ownerName;
-        this.balance = initialBalance;
+        this.balance += amount;
     }
-    
+
     /**
-     * Retrieves the account number.
+     * Withdraws money from the account.
+     * @param amount The amount to subtract.
+     * @throws IllegalArgumentException if amount is invalid or exceeds balance.
      */
-    public int getAccountNumber() {
-        return accountNumber;
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
+        }
+        if (amount > balance) {
+            throw new IllegalArgumentException("Insufficient funds.");
+        }
+        this.balance -= amount;
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getHolderName() {
+        return holderName;
+    }
+
+    /**
+     * Returns account details as a string formatted for the GUI display.
+     * @return A formatted string of account info.
+     */
+    public String getDetails() {
+        return String.format("ID: %d | Name: %-10s | Balance: $%.2f", 
+                             accountNumber, holderName, balance);
+    }
+}
