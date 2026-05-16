@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 /**
  * BankAPP Application
  * Description: The main application that manages multiple bank accounts. It allows users
@@ -7,9 +10,6 @@
  *@Author: Eric Orea    
  * @Date: 5/13/2026
  */
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class BankApp {
 
