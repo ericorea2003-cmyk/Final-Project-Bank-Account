@@ -10,6 +10,10 @@ The workspace contains two folders by default, where:
 - `src`: the folder to maintain sources
 - `doc`: the folder to maintain documentation related to my project (UML diagram, etc)
 
+## Struggles 
+Something I definetley do want to say is that the hardest part for this assignment for me was making sure that all of the classes would compile because if one didn't then it could possibly mess with the rest of the classes as well until you get it right.
+
+
 ## 🏛️ Application Architecture
 
 The system consists of three primary source files:
@@ -38,6 +42,3 @@ You can usually copy the source files into a single project folder, open your te
 I would say you only really have one option and that option is option A: To run the Graphical Desktop (GUI) version Because that is what most people have been doing in my Class.
 
 
-
- 
- 

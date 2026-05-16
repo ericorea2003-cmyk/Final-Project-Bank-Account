@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 /**
  * Bank AccountGUI Application
  * Description: Visually repesents a graphicall user interface for a bank account. It
@@ -6,9 +9,7 @@
  * @Author: Eric Orea
  * @Date: 5/13/2026
  */
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+
 
 public class BankAccountGUI extends JFrame {
     private ArrayList<BankAccount> accounts = new ArrayList<>();
